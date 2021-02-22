@@ -1,7 +1,7 @@
 {
-  "name": "11_begin_React",
+  "name": "events_JS",
   "version": "1.0.0",
-  "description": "Beetroot JavaScript advanced lesson begin React",
+  "description": "Beetroot JavaScript advanced",
   "main": "index.js",
   "scripts": {
     "start": "browser-sync start -s -w -f=\"./index.html\" --no-notify"
