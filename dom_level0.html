@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Event 1</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="_/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="py-3 text-center">DOM Level 0 events</h2>
+      <hr>
+    
+      <div class="row">
+        <!--  DOM level 0 ===== code in element's attribute -->
+        
+        <div class=" col-md-4">
+          <h3>code in element's attribute</h3>
+        
+        <ul class="list-group">
+          <li class="list-group-item">
+            <a onclick="console.log(this.textContent)" href="#">One</a>
+          </li>
+          <li class="list-group-item">
+            <a onclick="console.log(this.textContent)" href="#">Two</a>
+          </li>
+          <li class="list-group-item">
+            <a onclick="console.log(this.textContent)" href="#">Three</a>
+          </li>
+        </ul>
+</div>
+        <!--  DOM level 0 ===== code in function -->
+
+        <div class="offset-1 col-md-2">
+          <input
+            onclick="return handler()"
+            class="btn btn-success btn-lg"
+            type="button"
+            value="Click me"
+          />
+      
+        <script>
+          function handler() {
+            console.log("I am hundler");
+            console.log(this);
+          }
+        </script>
+
+        <!--  DOM level 0 ===== code in pseudo protocol -->
+
+        <div class="mt-5">
+          <a href="404.html">Go to non exists page</a>
+        </div>
+  </div>
+        <!-- 1. DOM Level 0 -  НЕНАВЯЗЧИВЫЙ код -->
+
+        <div class="offset-1 col-md-4">
+          <h3>ненавязчивый код</h3>
+          <a class="link-item btn btn-primary" href="#">Banana</a>
+          <a class="link-item btn btn-success" href="#">Papaya</a>
+          <a class="link-item btn btn-danger" href="#">Orange</a>
+        </div>
+     
+      <script>
+        const linkItems = document.querySelectorAll(".link-item");
+        linkItems.forEach((el) => (el.onclick = handleClickLinkItems));
+
+        function handleClickLinkItems() {
+          alert(this.innerHTML);
+        }
+      </script>
+
+      <!-- /.row-->
+    </div>
+    <!-- /.container -->
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+ <head>
+	<title>Index.html </title>
+    <meta charset="utf-8">
+     <link rel="stylesheet" href="_/css/bootstrap.min.css">
+     <link rel="stylesheet" href="_/css/style.css">
+     <script src="_/js/script.js"></script>
+     <style>
+         #content {
+             text-align:left;
+         }
+     </style>
+  </head>
+<body>
+<div class="container">
+    <div class="mt-5">
+        <p id="content">charCode доступен только при событии keypress</p>
+         <input type="text" id="login" autocomplete="off">
+    </div>
+    <div class="row mt-3">
+         <div id="res-keydown" class="col-md-3"></div>
+        <div id="res-keyup" class="col-md-3"></div>
+        <div id="res-keypress" class="col-md-3"></div>
+    </div>
+
+</div>
+<!-- ******************************** -->
+
+
+
+<script>
+function handle(id){
+    return function(e) {
+        let msg = '',
+            el = document.getElementById(id);
+        el.innerHTML = '';
+        msg += "Event: " + e.type.toUpperCase() + "<br>";
+        msg += "e.key -> " + e.key + "<br>";
+        msg += "e.charCode -> " + e.charCode + "<br>";
+        msg += "e.keyCode -> " + e.keyCode + "<br>";
+        msg += "Alt -> " + e.altKey + "<br>";
+        msg += "Ctrl -> " + e.ctrlKey + "<br>";
+        msg += "Shift -> " + e.shiftKey + "<br>";
+
+        el.innerHTML = msg;
+    }
+}
+
+document.addEventListener('keypress', handle('res-keypress'), false);
+document.addEventListener('keydown', handle('res-keydown'), false);
+document.addEventListener('keyup', handle('res-keyup'), false);
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</body>
+</html>

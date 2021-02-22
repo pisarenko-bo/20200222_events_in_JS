@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+ <head>
+	<title>mouseEvents</title>
+    <meta charset="utf-8">
+     <link rel="stylesheet" href="_/css/bootstrap.min.css">
+     <link rel="stylesheet" href="_/css/style.css">
+      <style>
+         .rectangle { width: 250px; height: 250px; margin-right: 20px;background: greenyellow;}
+     </style>
+ </head>
+<body>
+<div class="container d-flex pt-5">
+        <div class="rectangle"></div>
+        <div id="evres" class="ml-5 h3"></div>
+</div>
+
+<script>
+const el = document.querySelector('.rectangle');
+
+el.addEventListener('mousemove', function(e){
+    let msg = '';
+    msg += 'Button -> ' + e.button + "<br>" // 0 - left, 1 - middle, 2-right
+    msg += 'Alt -> ' + e.altKey + "<br>";  //
+    msg += 'Ctrl -> ' + e.ctrlKey + '<br>';  //
+    msg += 'Shift -> ' + e.shiftKey + '<br>';  //
+    msg += 'ClientX -> ' + e.clientX + '<br>';  //  координата относительно верхнего левого угла документа
+    msg += 'ClientY -> ' + e.clientY + '<br>';
+    msg += 'ScreenX -> ' + e.screenY + '<br>';  //  координата относительно верхнего левого угла экрана
+    msg += 'ScreenY -> ' + e.screenY + '<br>';
+
+    document.getElementById('evres').innerHTML = msg;
+});
+
+
+
+el.addEventListener('mousedown', function(e){
+    let x  = e.offsetX != undefined ? e.offsetX : e.layerX;
+    let y  = e.offsetY != undefined ? e.offsetY : e.layerY;
+    this.innerHTML = 'X = ' + x + ", Y = " + y;
+});
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bubbling event</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="_/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="_/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="d1" class="d1">
+        DIV 1
+        <div id="d2" class="d2">
+          DIV 2
+          <div id="d3" class="d3">DIV 3</div>
+        </div>
+      </div>
+
+      <script>
+        const d1 = document.getElementById("d1");
+        const d2 = document.getElementById("d2");
+        const d3 = document.getElementById("d3");
+
+        function handle1() {}
+        function handle2() {}
+        function handle3() {}
+
+        const capture = true;
+        d1.addEventListener("click", handle1, capture);
+        d2.addEventListener("click", handle2, capture);
+        d3.addEventListener("click", handle3, capture);
+      </script>
+    </div>
+  </body>
+</html>

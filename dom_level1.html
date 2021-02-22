@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Event 3</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="_/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Event 3</h2>
+      <ul id="results"></ul>
+
+      <div class="row">
+        <div class="col-md-4">
+          <a class="btn btn-primary" href="#">Один</a>
+          <a class="btn btn-success" href="#">Два</a>
+          <a class="btn btn-danger" href="#">Три</a>
+        </div>
+
+        <div class="col-md-4">
+          <input
+            id="btn"
+            type="button"
+            class="btn btn-primary btn-lg"
+            value="Remove Handler"
+          />
+        </div>
+      </div>
+      <!-- /.row-->
+    </div>
+    <!-- /.container-->
+    <script>
+      function handleClick() {
+        alert(this.innerHTML);
+      }
+
+      const els = document.querySelectorAll("a");
+      const btn = document.getElementById("btn");
+
+      // todo
+    </script>
+  </body>
+</html>

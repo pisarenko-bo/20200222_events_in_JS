@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+ <head>
+	<title>onchange.html </title>
+    <meta charset="utf-8">
+     <link href="_/css/bootstrap.min.css" rel="stylesheet">
+ </head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+
+            <form name="myform" autocomplete="off">
+                <div class="form-group">
+                    <label class="label-control col-sm-2">Login</label>
+                        <input class="form-control"  type="text" name="login">
+                </div>
+                <div class="form-group">
+                    <label class="label-control">Password</label>
+                        <input class="form-control"  type="text" name="password">
+               </div>
+           </form>
+
+        </div><!-- /.col-->
+
+        <div id="res" class="col-md-6 mt-3"></div>
+
+     </div> <!-- /.row-->
+</div> <!-- /.container -->
+<!-- ******************************** -->
+<script>
+/*  Событие onchange происходит, когда
+   - поле теряет фркус
+   - значение поля было изменено
+**/
+
+const d = document,
+    res = d.getElementById('res'),
+    f = document.myform,
+    els = f.elements;
+
+ function print(name){
+     res.innerHTML += `<p>Field <span class="text-danger h5">${name}</span> was changed</p>`;
+ }
+
+ [].map.call(els, el =>  el.onchange =  () => print(el.name) );
+
+</script>
+
+
+</body>
+</html>

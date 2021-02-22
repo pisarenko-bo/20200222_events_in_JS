@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <title>Clone</title>
+    <style>
+      .element {
+        width: 190px;
+        padding: 2rem 0.5rem;
+        font-size: 1.2rem;
+        text-align: center;
+        background: #e2e2e2;
+        margin-bottom: 1rem;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container" class="container">
+      <div class="element">Element</div>
+    </div>
+
+    <script>
+      const container = document.getElementById("container");
+
+      document.querySelector(".element").addEventListener("click", handle);
+
+      function handle() {
+        const newEl = this.cloneNode(true);
+        container.appendChild(newEl);
+      }
+    </script>
+  </body>
+</html>
